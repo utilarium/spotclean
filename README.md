@@ -287,3 +287,4 @@ Apache-2.0 - see [LICENSE](LICENSE) file for details.
 
 Like spot-cleaning a stain before it spreads, Spotclean removes sensitive information from error messages before they can leak to unauthorized parties.
 
+TEST
