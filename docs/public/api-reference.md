@@ -195,7 +195,7 @@ import type {
   PathSanitizerConfig,
   ErrorHandlingOptions,
   Logger,
-} from '@theunwalked/spotclean';
+} from '@utilarium/spotclean';
 ```
 
 ## Default Export
@@ -222,6 +222,6 @@ import {
   createSafeError,
   withErrorHandling,
   sanitizeUnknownError,
-} from '@theunwalked/spotclean';
+} from '@utilarium/spotclean';
 ```
 

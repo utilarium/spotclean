@@ -24,14 +24,14 @@ In production environments, error messages often contain sensitive information t
 ## Installation
 
 ```bash
-npm install @theunwalked/spotclean
+npm install @utilarium/spotclean
 ```
 
 Or with your preferred package manager:
 
 ```bash
-yarn add @theunwalked/spotclean
-pnpm add @theunwalked/spotclean
+yarn add @utilarium/spotclean
+pnpm add @utilarium/spotclean
 ```
 
 ## Quick Start
@@ -41,7 +41,7 @@ import {
   sanitize, 
   createSafeError, 
   configureErrorSanitizer 
-} from '@theunwalked/spotclean';
+} from '@utilarium/spotclean';
 
 // Configure for production
 configureErrorSanitizer({ 
@@ -74,7 +74,7 @@ try {
 ## Using createSafeError
 
 ```typescript
-import { createSafeError } from '@theunwalked/spotclean';
+import { createSafeError } from '@utilarium/spotclean';
 
 try {
   throw new Error('Failed to connect to postgres://admin:secret@db.internal:5432');

@@ -5,7 +5,7 @@ The ErrorSanitizer is the main component that coordinates sanitization of error 
 ## Basic Usage
 
 ```typescript
-import { ErrorSanitizer } from '@theunwalked/spotclean';
+import { ErrorSanitizer } from '@utilarium/spotclean';
 
 const sanitizer = new ErrorSanitizer({
   enabled: true,
@@ -55,7 +55,7 @@ Use the global instance for application-wide configuration:
 import { 
   getErrorSanitizer, 
   configureErrorSanitizer 
-} from '@theunwalked/spotclean';
+} from '@utilarium/spotclean';
 
 // Configure once at startup
 configureErrorSanitizer({
@@ -70,7 +70,7 @@ const { external } = getErrorSanitizer().sanitize(error);
 Or create isolated instances:
 
 ```typescript
-import { ErrorSanitizer } from '@theunwalked/spotclean';
+import { ErrorSanitizer } from '@utilarium/spotclean';
 
 const apiSanitizer = new ErrorSanitizer({
   environment: 'production',
@@ -113,7 +113,7 @@ const { external } = sanitize(error);
 Wrap functions to automatically sanitize errors:
 
 ```typescript
-import { withErrorHandling } from '@theunwalked/spotclean';
+import { withErrorHandling } from '@utilarium/spotclean';
 
 const logger = {
   error: (msg, ctx) => console.error(msg, ctx),

@@ -5,7 +5,7 @@ Common patterns for integrating Spotclean into your applications.
 ## Express/Koa Error Handler
 
 ```typescript
-import { getErrorSanitizer } from '@theunwalked/spotclean';
+import { getErrorSanitizer } from '@utilarium/spotclean';
 
 // Express error handler
 app.use((err, req, res, next) => {
@@ -31,7 +31,7 @@ app.use((err, req, res, next) => {
 ## Async Function Wrapper
 
 ```typescript
-import { withErrorHandling } from '@theunwalked/spotclean';
+import { withErrorHandling } from '@utilarium/spotclean';
 
 const logger = {
   error: (msg, ctx) => console.error(msg, ctx),
@@ -65,7 +65,7 @@ const result = await safeApiCall('/api/process', { userId: 123 });
 ## CLI Error Handler
 
 ```typescript
-import { sanitize } from '@theunwalked/spotclean';
+import { sanitize } from '@utilarium/spotclean';
 
 async function main() {
   try {
@@ -93,7 +93,7 @@ async function main() {
 ## GraphQL Error Formatting
 
 ```typescript
-import { getErrorSanitizer } from '@theunwalked/spotclean';
+import { getErrorSanitizer } from '@utilarium/spotclean';
 
 const server = new ApolloServer({
   typeDefs,
@@ -121,7 +121,7 @@ const server = new ApolloServer({
 ## Next.js API Routes
 
 ```typescript
-import { sanitize, configureErrorSanitizer } from '@theunwalked/spotclean';
+import { sanitize, configureErrorSanitizer } from '@utilarium/spotclean';
 
 // Configure once
 configureErrorSanitizer({
@@ -150,7 +150,7 @@ export default async function handler(req, res) {
 ## Fastify Plugin
 
 ```typescript
-import { getErrorSanitizer, configureErrorSanitizer } from '@theunwalked/spotclean';
+import { getErrorSanitizer, configureErrorSanitizer } from '@utilarium/spotclean';
 
 const spotcleanPlugin = async (fastify) => {
   configureErrorSanitizer({
@@ -179,7 +179,7 @@ fastify.register(spotcleanPlugin);
 ## Lambda/Serverless
 
 ```typescript
-import { sanitize, configureErrorSanitizer } from '@theunwalked/spotclean';
+import { sanitize, configureErrorSanitizer } from '@utilarium/spotclean';
 
 // Configure at cold start
 configureErrorSanitizer({
@@ -219,7 +219,7 @@ export const handler = async (event, context) => {
 When testing error handling, you may want to disable sanitization:
 
 ```typescript
-import { configureErrorSanitizer } from '@theunwalked/spotclean';
+import { configureErrorSanitizer } from '@utilarium/spotclean';
 
 beforeEach(() => {
   configureErrorSanitizer({
@@ -239,7 +239,7 @@ test('handles database errors', async () => {
 
 ```typescript
 // app.ts - at the top
-import { configureErrorSanitizer } from '@theunwalked/spotclean';
+import { configureErrorSanitizer } from '@utilarium/spotclean';
 
 configureErrorSanitizer({
   environment: process.env.NODE_ENV as any,

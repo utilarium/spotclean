@@ -5,7 +5,7 @@ PathSanitizer redacts file system paths that could reveal system structure, user
 ## Basic Usage
 
 ```typescript
-import { PathSanitizer } from '@theunwalked/spotclean';
+import { PathSanitizer } from '@utilarium/spotclean';
 
 const sanitizer = new PathSanitizer({
   enabled: true,
@@ -95,7 +95,7 @@ const sanitizer = new PathSanitizer({
 import { 
   getPathSanitizer, 
   configurePathSanitizer 
-} from '@theunwalked/spotclean';
+} from '@utilarium/spotclean';
 
 configurePathSanitizer({
   basePaths: [process.cwd()],
@@ -139,7 +139,7 @@ Set up path sanitization at application startup:
 
 ```typescript
 // app.ts
-import { configurePathSanitizer } from '@theunwalked/spotclean';
+import { configurePathSanitizer } from '@utilarium/spotclean';
 
 configurePathSanitizer({
   basePaths: [process.cwd()],

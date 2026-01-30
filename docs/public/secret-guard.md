@@ -5,7 +5,7 @@ SecretGuard detects and redacts secrets from strings using regex patterns. It's 
 ## Basic Usage
 
 ```typescript
-import { SecretGuard } from '@theunwalked/spotclean';
+import { SecretGuard } from '@utilarium/spotclean';
 
 const guard = new SecretGuard({
   enabled: true,
@@ -47,7 +47,7 @@ SecretGuard detects these secret types by default:
 Add patterns for application-specific secrets:
 
 ```typescript
-import { SecretGuard } from '@theunwalked/spotclean';
+import { SecretGuard } from '@utilarium/spotclean';
 
 const guard = new SecretGuard({
   enabled: true,
@@ -101,7 +101,7 @@ Use the global instance:
 import { 
   getSecretGuard, 
   configureSecretGuard 
-} from '@theunwalked/spotclean';
+} from '@utilarium/spotclean';
 
 configureSecretGuard({
   customPatterns: [
@@ -116,7 +116,7 @@ const safe = guard.redact(message);
 Or create isolated instances for different contexts:
 
 ```typescript
-import { SecretGuard } from '@theunwalked/spotclean';
+import { SecretGuard } from '@utilarium/spotclean';
 
 // Stricter patterns for public-facing APIs
 const publicGuard = new SecretGuard({
