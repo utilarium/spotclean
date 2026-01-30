@@ -128,10 +128,13 @@ function App() {
                     </div>
                     <p className="subtitle">Error Message Sanitization for TypeScript</p>
                     <div className="header-links">
+                        <a href="https://utilarium.github.io" target="_blank" rel="noopener noreferrer">
+                            Utilarium
+                        </a>
                         <a href="https://github.com/utilarium/spotclean" target="_blank" rel="noopener noreferrer">
                             GitHub
                         </a>
-                        <a href="https://www.npmjs.com/package/@theunwalked/spotclean" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.npmjs.com/package/@utilarium/spotclean" target="_blank" rel="noopener noreferrer">
                             NPM
                         </a>
                     </div>
