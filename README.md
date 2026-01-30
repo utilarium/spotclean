@@ -24,11 +24,11 @@ In production environments, error messages often contain sensitive information t
 ## Installation
 
 ```bash
-npm install @theunwalked/spotclean
+npm install @utilarium/spotclean
 # or
-yarn add @theunwalked/spotclean
+yarn add @utilarium/spotclean
 # or
-pnpm add @theunwalked/spotclean
+pnpm add @utilarium/spotclean
 ```
 
 ## Quick Start
@@ -38,7 +38,7 @@ import {
   sanitize, 
   createSafeError, 
   configureErrorSanitizer 
-} from '@theunwalked/spotclean';
+} from '@utilarium/spotclean';
 
 // Configure for production
 configureErrorSanitizer({ 
@@ -71,7 +71,7 @@ try {
 ### Using createSafeError
 
 ```typescript
-import { createSafeError } from '@theunwalked/spotclean';
+import { createSafeError } from '@utilarium/spotclean';
 
 try {
   throw new Error('Failed to connect to postgres://admin:secret@db.internal:5432');
@@ -85,7 +85,7 @@ try {
 ### Using withErrorHandling wrapper
 
 ```typescript
-import { withErrorHandling } from '@theunwalked/spotclean';
+import { withErrorHandling } from '@utilarium/spotclean';
 
 const logger = {
   error: (msg, ctx) => console.error(msg, ctx),
@@ -112,7 +112,7 @@ const data = await safeFetch('https://api.example.com/data');
 The main class for sanitizing errors.
 
 ```typescript
-import { ErrorSanitizer } from '@theunwalked/spotclean';
+import { ErrorSanitizer } from '@utilarium/spotclean';
 
 const sanitizer = new ErrorSanitizer({
   enabled: true,                    // Enable sanitization
@@ -130,7 +130,7 @@ const { external, internal } = sanitizer.sanitize(error);
 Detects and redacts secrets from strings.
 
 ```typescript
-import { SecretGuard } from '@theunwalked/spotclean';
+import { SecretGuard } from '@utilarium/spotclean';
 
 const guard = new SecretGuard({
   enabled: true,
@@ -155,7 +155,7 @@ const safe = guard.redact('api_key=sk_live_1234567890abcdef');
 Redacts file system paths.
 
 ```typescript
-import { PathSanitizer } from '@theunwalked/spotclean';
+import { PathSanitizer } from '@utilarium/spotclean';
 
 const sanitizer = new PathSanitizer({
   enabled: true,
@@ -177,7 +177,7 @@ import {
   configureErrorSanitizer,
   configureSecretGuard,
   configurePathSanitizer,
-} from '@theunwalked/spotclean';
+} from '@utilarium/spotclean';
 
 // Configure all components
 configureErrorSanitizer({
@@ -231,7 +231,7 @@ Set up Spotclean at application startup before any errors can occur:
 
 ```typescript
 // app.ts
-import { configureErrorSanitizer } from '@theunwalked/spotclean';
+import { configureErrorSanitizer } from '@utilarium/spotclean';
 
 configureErrorSanitizer({
   environment: process.env.NODE_ENV as any,

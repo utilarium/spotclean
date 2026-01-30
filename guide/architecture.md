@@ -173,13 +173,13 @@ Each component supports both global singleton and instance usage:
 
 ```typescript
 // Global usage
-import { getErrorSanitizer, configureErrorSanitizer } from '@theunwalked/spotclean';
+import { getErrorSanitizer, configureErrorSanitizer } from '@utilarium/spotclean';
 
 configureErrorSanitizer({ environment: 'production' });
 const sanitizer = getErrorSanitizer();  // Returns global instance
 
 // Instance usage
-import { ErrorSanitizer } from '@theunwalked/spotclean';
+import { ErrorSanitizer } from '@utilarium/spotclean';
 
 const sanitizer = new ErrorSanitizer({ environment: 'production' });
 ```

@@ -24,7 +24,7 @@ When analyzing or generating code using `spotclean`, keep these patterns in mind
 4.  **Use Correlation IDs**: Enable error tracking without exposing details
 
 ```typescript
-import { configureErrorSanitizer, sanitize } from '@theunwalked/spotclean';
+import { configureErrorSanitizer, sanitize } from '@utilarium/spotclean';
 
 // Configure at startup
 configureErrorSanitizer({
@@ -106,7 +106,7 @@ This guide directory contains specialized documentation for different aspects of
 ### Express/Koa Error Handler
 
 ```typescript
-import { getErrorSanitizer } from '@theunwalked/spotclean';
+import { getErrorSanitizer } from '@utilarium/spotclean';
 
 app.use((err, req, res, next) => {
   const { external, internal } = getErrorSanitizer().sanitize(err);
@@ -123,7 +123,7 @@ app.use((err, req, res, next) => {
 ### Async Function Wrapper
 
 ```typescript
-import { withErrorHandling } from '@theunwalked/spotclean';
+import { withErrorHandling } from '@utilarium/spotclean';
 
 const safeDbQuery = withErrorHandling(
   async (sql: string) => database.query(sql),
@@ -134,7 +134,7 @@ const safeDbQuery = withErrorHandling(
 ### CLI Error Handler
 
 ```typescript
-import { sanitizeUnknownError } from '@theunwalked/spotclean';
+import { sanitizeUnknownError } from '@utilarium/spotclean';
 
 try {
   await runCommand();
@@ -159,7 +159,7 @@ try {
 ## Testing Patterns
 
 ```typescript
-import { ErrorSanitizer, SecretGuard } from '@theunwalked/spotclean';
+import { ErrorSanitizer, SecretGuard } from '@utilarium/spotclean';
 
 describe('Error handling', () => {
   it('should not leak secrets', () => {
