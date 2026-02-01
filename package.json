@@ -1,6 +1,6 @@
 {
   "name": "@utilarium/spotclean",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "spotclean sanitizes error messages to prevent secret leakage and information disclosure.",
   "type": "module",
   "main": "./dist/spotclean.cjs",
